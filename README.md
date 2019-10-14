@@ -43,10 +43,12 @@ listagem de verbas indenizatórias:
 
 ### 2.1 parâmetros aceitos:
 
-```order=``` asc(crescente) ou desc(decrescente)
+```ordem=```  [opcional], Ex: asc(crescente) ou desc(decrescente)
 
-```limit=``` (numero de resultados)
+```limite=``` [opcional], Ex: 5
+
+```mes=``` [obrigatório], Ex: 1
 
 Exemplo de listagem decrescente das verbas e com limite de 5 resultados (por valor total e agrupadas por deputado):
 
-```/verbas_indenizatorias?order=desc&limit=5```
+```/verbas_indenizatorias?mes=1&ordem=desc&limite=5```
