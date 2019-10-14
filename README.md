@@ -10,6 +10,7 @@ Objetivos:
 
 ## 1.0 Instruções de Uso [Instalação]
 
+O projeto foi feito usando ```Laravel 6.2.0```, e a versão PHP deve ser a ```7.2``` ou superior, mais informações podem ser encontradas no site do [Laravel](https://laravel.com/docs/6.x)
 
 O projeto possui 2 rotas para popular dados dos deputados e dados da verbas indenizatórias (e suas despesas detalhadas), as rotas são:
 
@@ -42,7 +43,7 @@ listagem de verbas indenizatórias:
 
 ### 2.1 parâmetros aceitos:
 
-```order=``` asc (crescente) ou desc (decrescente)
+```order=``` asc(crescente) ou desc(decrescente)
 
 ```limit=``` (numero de resultados)
 
