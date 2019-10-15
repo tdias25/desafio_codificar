@@ -4,7 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
-use App\Politico\dadosAbertosClient;
+use App\DadosAbertos\dadosAbertosClient;
 
 use App\Models\Deputado;
 use App\Models\VerbaIndenizatoria;
@@ -26,11 +26,12 @@ class PoliticosController extends Controller
 
 			$dadosAbertosClient = new dadosAbertosClient;
 
-			$listaDeputados = $dadosAbertosClient->listaDeputadosPorLegislatura();
+			// legislatura de valor 18 foi definida pois eh o periodo onde estao os deputados vigentes no ano de 2017
+			$listaDeputados = $dadosAbertosClient->listaDeputadosPorLegislatura(18);
 
 			foreach ($listaDeputados as $deputado) {
 
-				$deputado = Deputado::findById($deputado['id']);	
+				$deputado = Deputado::findByIdDeputado($deputado['id']);	
 
 				if($deputado)
 					continue;
@@ -60,12 +61,18 @@ class PoliticosController extends Controller
 
 	function set_verbas () {
 
+		// infelizmente tive que definir o tempo limite maximo como ilimitado devido a resposta lenta do webservice + o intervalo de execucao de cada iteracao
+		set_time_limit(0);
+
 		try {
 
 			$dadosAbertosClient = new dadosAbertosClient;
 			$deputados = Deputado::all();
 
 			foreach ($deputados as $deputado):
+
+				if($deputado->id <= 115)
+					continue;
 
 				for ($mes=1; $mes <= 12 ; $mes++) {
 
@@ -99,13 +106,12 @@ class PoliticosController extends Controller
 								'descricao_tipo_despesa' => $despesaDetalhada['descTipoDespesa']
 							];
 
-							$createVerba->itens()->create($despesaDetalhadaData);
+							$createVerba->despesas()->create($despesaDetalhadaData);
 						}
 
 					}
 					// a API recomenda um intervalo de 1 segundos entre as requisicoes, mas por precaucao coloquei 5 segundos
 					sleep(5);
-
 				}
 
 			endforeach;
@@ -118,6 +124,15 @@ class PoliticosController extends Controller
 
 	function set_midias_sociais () {
 
+		//
+	}
 
+
+	function teste() {
+
+
+		// echo createDateByMonth('000010');
+			
+		// return VerbaIndenizatoria::Info()->find('14308');
 	}
 }

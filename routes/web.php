@@ -15,8 +15,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-
-Route::get('teste', 'CidadaoDeOlhoController@index');
-
 Route::get('set_deputados', 'PoliticosController@set_deputados');
 Route::get('set_verbas', 'PoliticosController@set_verbas');
+
+// Route::get('teste', 'PoliticosController@teste');

@@ -77,7 +77,7 @@ class curlHelper
      }
 
 	/**
-     * envia requisicao HTTP
+     * envia uma requisicao HTTP
      *
      * @return string
      */
@@ -87,7 +87,7 @@ class curlHelper
 		$ch = curl_init();
 
 		if($this->method == 'GET')
-			$url = $this->url . http_build_query($this->params);
+			$url = $this->url . '?' . http_build_query($this->params);
 		else
 			curl_setopt($ch, CURLOPT_POSTFIELDS, http_build_query($this->params));
 

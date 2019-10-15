@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Politico;
+namespace App\DadosAbertos;
 
 use App\Helpers\curlHelper;
 
@@ -51,7 +51,7 @@ class dadosAbertosClient {
      */
 	function listaDeputados() 
 	{
-		$caminho = 'deputados/em_exercicio?';
+		$caminho = 'deputados/em_exercicio';
 		$resposta = $this->enviaRequisicao($caminho);
 
 		return $resposta['list'];
@@ -79,7 +79,7 @@ class dadosAbertosClient {
 	function listaDeputadosPorLegislatura($legislatura = 18) 
 	{
 
-		$caminho = "legislaturas/pesquisa_deputados?";
+		$caminho = "legislaturas/pesquisa_deputados";
 
 		$this->request->setParam('nome', '');
 		$this->request->setParam('leg', $legislatura);
