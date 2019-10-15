@@ -39,7 +39,7 @@ Como o processo de população dos dados de verbas indenizatórias, através do 
 
 listagem de verbas indenizatórias:
 
-```/verbas_indenizatorias```
+```/api/verbas_indenizatorias```
 
 ### 2.1 parâmetros aceitos:
 
@@ -51,4 +51,4 @@ listagem de verbas indenizatórias:
 
 Exemplo de listagem decrescente das verbas e com limite de 5 resultados (por valor total e agrupadas por deputado):
 
-```/verbas_indenizatorias?mes=1&ordem=desc&limite=5```
+```/api/verbas_indenizatorias?mes=1&ordem=desc&limite=5```
