@@ -1,0 +1,22 @@
+{
+    "name": "lcjury/administrative",
+    "description": "Administrative provides an easy way to scaffold political administrative division (like, region, provinces, communes) to your app.",
+    "type": "laravel-package",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "luis jury",
+            "email": "zeui16@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9"
+    },
+    "autoload": {
+        "psr-4": {
+            "App\\": "app/",
+            "Lcjury\\Administrative\\": "src/"
+        }
+    },
+    "minimum-stability": "dev"
+}
