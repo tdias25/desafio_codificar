@@ -19,7 +19,7 @@ O projeto possui 2 rotas para popular dados dos deputados e dados da verbas inde
 
 Ao acessar cada rota o sistema consome os dados da API, itera e os salva no banco de dados.
 
-NOTA: Na iteração dos deputados é verificada a existência no banco de dados através do "idDeputado" retornado pela API, já na iteração de verbas não é possível, pois não existe um identificador único.
+```NOTA: Na iteração dos deputados é verificada a existência no banco de dados através do "idDeputado" retornado pelo Webservice, já na iteração de verbas não é possível, pois não existe um identificador único.```
 
 
 ### 1.1 Importação dos dados através de backup MySQL
@@ -49,6 +49,6 @@ listagem de verbas indenizatórias:
 
 ```mes=``` [obrigatório], Ex: 1
 
-Exemplo de listagem decrescente das verbas e com limite de 5 resultados (por valor total e agrupadas por deputado):
+Exemplo de listagem decrescente das verbas com limite de 5 resultados para o mês de janeiro (por valor total e agrupadas por deputado):
 
 ```GET /api/verbas_indenizatorias?mes=1&ordem=desc&limite=5```
