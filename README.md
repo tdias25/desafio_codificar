@@ -5,7 +5,7 @@ O projeto se trata de um pequeno desafio de programação proposta pela equipe d
 Objetivos:
 
 - Consumir e salvar os dados num banco de dados, o banco escolhido foi o MySQL.
-- Mostrar o top 5 deputados que mais pediram reembolso de verbas indenizatórias por mês, considerando somente o mês de 2017
+- Mostrar o top 5 deputados que mais pediram reembolso de verbas indenizatórias por mês, considerando somente o ano de 2017
 - Mostrar o ranking das redes sociais mais utilizadas dentre os deputados, ordenado de forma decrescente. :x:
 
 ## 1.0 Instruções de Uso [Instalação]
